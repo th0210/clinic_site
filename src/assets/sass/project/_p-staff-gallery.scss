@@ -1,0 +1,61 @@
+@use "../global" as global;
+
+.p-staff-gallery {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    margin-top: 160px;
+
+    @include global.mq(sp) {
+      margin-top: 100px;
+  }
+}
+
+.p-staff-gallery__lists {
+    display: flex;
+
+    &:first-child {
+        animation: loop 60s -30s linear infinite;
+    }
+
+    &:last-child {
+        animation: loop2 60s linear infinite;
+    }
+}
+
+.p-staff-gallery__list {
+    width: 305px;
+    margin-right: 20px;
+
+    @include global.mq(sp) {
+      width: 200px;
+      height: 150px;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+
+        @include global.mq(sp) {
+          height: 100%;
+      }
+    }
+}
+
+@keyframes loop {
+    0% {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes loop2 {
+    0% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }

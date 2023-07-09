@@ -1,0 +1,45 @@
+@use "../global" as global;
+
+.p-contact {
+    margin: 80px 0 calc(100px + 2.5vw);
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+
+    @include global.mq(sp) {
+        margin: 60px 0 calc(100px + 2.5vw);
+        padding: 0 20px;
+    }
+}
+
+.p-contact__inner {
+    max-width: 728px;
+    margin: 0 auto;
+}
+
+.p-contact__message {
+
+}
+
+.p-contact__title {
+    margin-top: 160px;
+    display: inline-block;
+    position: relative;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        margin-top: 100px;
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}
+
+.p-contact__message {
+    font-size: 14px;
+    font-weight: global.$medium;
+    line-height: 1.7;
+
+    span {
+        color: global.$accent-color;
+    }
+}

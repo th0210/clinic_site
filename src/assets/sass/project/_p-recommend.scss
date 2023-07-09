@@ -1,0 +1,46 @@
+@use "../global" as global;
+
+.p-recommend {
+    padding: 120px 160px 140px 160px;
+
+    @include global.mq(tb) {
+        padding: 120px 24px 140px 24px;
+        margin: 0 auto;
+    }
+
+    @include global.mq(sp) {
+        padding: 100px 20px 100px 20px;
+    }
+}
+
+.p-recommend__inner {
+    @include global.mq(sp) {
+        padding: 0 30px;
+    }
+}
+
+.p-recommend__title {
+    display: inline-block;
+    position: relative;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}
+
+.p-recommend__wrapper {
+    display: flex;
+    gap: 66px;
+    margin-top: 60px;
+    
+    @include global.mq(tb) {
+        max-width: 950px;
+        margin: 60px auto 0 auto;
+    }
+
+    @include global.mq(sp) {
+        display: block;
+        margin-top: 40px;
+    }
+}

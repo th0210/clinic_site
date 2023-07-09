@@ -1,0 +1,51 @@
+@use "../global" as global;
+
+.p-staff-card {
+  width: 30%;
+
+  @include global.mq(tb2) {
+    width: 50%;
+}
+
+@include global.mq(sp) {
+  width: 100%;
+  margin-top: 53px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+  &.grid {
+    width: 100%;
+  }
+}
+
+.p-staff-card__img {
+
+}
+
+.p-staff-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.p-staff-card__job {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: global.$medium;
+  letter-spacing: 0.08em;
+}
+
+.p-staff-card__name {
+  font-size: 18px;
+  font-weight: global.$bold;
+  letter-spacing: 0.08em;
+}
+
+.p-staff-card__detail {
+  margin-top: 20px;
+}

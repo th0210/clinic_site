@@ -1,0 +1,32 @@
+@use "../global" as global;
+
+.p-staff-blog {
+    max-width: 1000px;
+    margin: 90px auto calc(160px + 2.5vw) auto;
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+
+    @include global.mq(sp) {
+        margin: 60px auto calc(100px + 2.5vw) auto;
+        padding: 0 24px;
+    }
+}
+
+.p-staff-blog__wrapper {
+    display: flex;
+    gap: 30px;
+
+    @include global.mq(tb2) {
+        display: block;
+    }
+}
+
+.p-staff-blog__main {
+    width: calc(100% - 330px);
+
+    @include global.mq(tb2) {
+        width: 100%;
+    }
+}

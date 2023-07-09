@@ -1,0 +1,61 @@
+@use "./variables" as global;
+
+@mixin mq($breakpoint: sp) {
+    //map-get(マップ型変数, キー)で値を取得
+    @media #{map-get(global.$breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+    }
+}
+
+
+@mixin section-title-deco($width, $height, $left, $right) {
+    &::before {
+        content: "";
+        width: $width;
+        height: $height;
+        background: url(../img/title-deco.svg) no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        left: $left;
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        content: "";
+        width: $width;
+        height: $height;
+        background: url(../img/title-deco.svg) no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        right: $right;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin reserve($width, $height, $border-radius1, $border-radius2,
+                $border-radius3, $border-radius4, $padding-tb, $padding-lr) {
+        width: $width;
+        height: $height;
+        background: global.$main-color;
+        display: inline-block;
+        border-radius: $border-radius1 $border-radius2 $border-radius3 $border-radius4;
+        padding: $padding-tb $padding-lr;
+        transition: 0.3s ease;
+}
+
+@mixin category($font-size, $padding-tb, $padding-lr, $border-radius) {
+    font-size: $font-size;
+    color: global.$text-color2;
+    font-weight: global.$medium;
+    background: global.$main-color;
+    padding: $padding-tb $padding-lr;
+    border-radius: $border-radius;
+    display: inline-block;
+}
+
+// アンカーリンクで移動したときのヘッダー分のズレ調整
+@mixin anchor-link ($space){
+    padding-top: $space;
+    margin-top: -$space;
+}

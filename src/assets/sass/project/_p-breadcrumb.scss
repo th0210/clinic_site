@@ -1,0 +1,62 @@
+@use "../global" as global;
+
+.p-breadcrumb {
+    margin: 14px 0 0 60px;
+    padding-left: 30px;
+
+    @include global.mq(tb) {
+        margin-left: 40px;
+    }
+
+    @include global.mq(tb2) {
+        margin-left: 40px;
+        padding-left: 0;
+        margin: 10px 0 0 0;
+    }
+
+    @include global.mq(sp) {
+        padding-left: 0;
+        margin: 10px 24px 0 24px; 
+    }
+
+    span {
+        font-size: 12px;
+    }
+}
+
+.p-breadcrumb__item {
+    display: inline;
+    margin: 0 8px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.p-breadcrumb__inner {
+    margin: 0 auto;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: global.$medium;
+
+    & > span {
+        padding: 0 8px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+
+    .home {
+        color: #C2C2C2;
+        display: inline-block;
+    }
+}

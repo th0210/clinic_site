@@ -1,0 +1,29 @@
+@use "../global" as global;
+
+.p-completion {
+    margin: 80px 0 calc(160px + 2.5vw) 0;
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+
+    @include global.mq(sp) {
+        margin: 60px 0 calc(100px + 2.5vw) 0;
+        padding: 0 20px;
+    }
+}
+
+.p-completion__inner {
+    max-width: 728px;
+    margin: 0 auto;
+}
+
+.p-completion__message {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: global.$medium;
+
+    span {
+        color: global.$accent-color;
+    }
+}

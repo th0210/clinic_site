@@ -1,0 +1,9 @@
+@use "../global" as global;
+
+.c-section-headline {
+    font-size: 14px;
+    color: global.$main-color;
+    line-height: 1;
+    font-weight: global.$bold;
+    letter-spacing: 0.1em;
+}

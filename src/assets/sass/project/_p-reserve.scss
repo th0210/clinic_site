@@ -1,0 +1,94 @@
+@use "../global" as global;
+
+.p-reserve {
+    margin: 80px 0 calc(160px + 2.5vw) 0;
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+
+    @include global.mq(sp) {
+        margin: 60px 0 calc(100px + 2.5vw) 0;
+        padding: 0 20px;
+    }
+}
+
+.p-reserve__inner {
+    max-width: 728px;
+    margin: 0 auto;
+}
+
+.p-reserve__message {
+    margin-top: 42px;
+
+    @include global.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.p-reserve__info {
+    display: inline-block;
+}
+
+.p-reserve__message__tel {
+    font-size: 32px;
+    line-height: 1;
+    color: global.$main-color;
+    font-weight: global.$bold;
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+
+    img {
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        margin-right: 4px;
+    }
+}
+
+.p-reserve__hours {
+    font-size: 12px;
+    color: global.$main-color;
+    line-height: 1;
+    font-weight: global.$medium;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.p-reserve__text {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: global.$medium;
+    margin-top: 28px;
+}
+
+.p-reserve-cta__link {
+    @include global.reserve(92px, 120px, 20px, 0, 0, 20px, 21px, 17px);
+}
+
+.p-reserve-cta__img {
+    width: 49px;
+    height: 29px;
+    margin: 0 auto;
+    
+}
+
+.p-reserve-cta__text {
+    font-size: 14px;
+    font-weight: global.$bold;
+    color: global.$text-color2;
+    margin-top: 12px;
+}
+
+.p-reserve__title {
+    margin-top: 160px;
+    display: inline-block;
+    position: relative;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        margin-top: 100px;
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}

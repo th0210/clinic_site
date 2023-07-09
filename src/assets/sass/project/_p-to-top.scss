@@ -1,0 +1,24 @@
+@use "../global" as global;
+
+.p-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    z-index: global.$to-top;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+
+    @include global.mq(tb) {
+        bottom: 35px;
+    }
+
+    @include global.mq(sp) {
+        bottom: 86px;
+    }
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+    }
+}

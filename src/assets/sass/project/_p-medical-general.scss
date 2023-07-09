@@ -1,0 +1,103 @@
+@use "../global" as global;
+
+.p-medical-general {
+    background: global.$bg-color;
+    margin-top: calc(15.8vw + 160px); /*デコレーションの高さ＋余白*/
+    margin-bottom: 7.6vw; /*デコレーションの高さ＋余白*/
+    padding-bottom: 82px;
+    position: relative;
+
+    @include global.mq(tb) {
+        padding: 0 24px 62px 24px;
+    }
+
+    @include global.mq(sp) {
+        padding-bottom: 62px;
+        margin-top: calc(15.8vw + 100px);
+    }
+
+    &::before {
+        content: "";
+        width: 57px;
+        height: 57px;
+        background: url(../img/deco-kirakira2-w.svg) no-repeat center/contain;
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+
+        @include global.mq(tb) {
+            width: 25px;
+            height: 25px;
+            bottom: 18px;
+            left: 12px;
+        }
+
+        @include global.mq(sp) {
+            width: 25px;
+            height: 25px;
+            bottom: 18px;
+            left: 12px;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 125px;
+        height: 138px;
+        background: url(../img/deco-kirakira-w.svg) no-repeat center/contain;
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+
+        @include global.mq(tb) {
+            width: 54px;
+            height: 59px;
+            bottom: 0;
+            right: 10px;
+        }
+
+        @include global.mq(sp) {
+            width: 54px;
+            height: 59px;
+            bottom: 0;
+            right: 10px;
+        }
+    }
+}
+
+.p-medical-general__deco__top {
+    width: 100%;
+    height: 15.8vw;
+    background: url(../img/bg-top.svg) no-repeat center/ cover;
+    position: absolute;
+    top: -15.8vw;
+    left: 0;
+}
+
+.p-medical-general__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.p-medical-general__title {
+    position: relative;
+    display: inline-block;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}
+
+.p-medical-general__wrapper {
+    margin-top: 60px;
+}
+
+.p-medical-general__deco__bottom {
+    width: 100%;
+    height: 7.6vw;
+    background: url(../img/bg-bottom.svg) no-repeat center/ cover;
+    position: absolute;
+    bottom: -7.6vw;
+    left: 0;
+}

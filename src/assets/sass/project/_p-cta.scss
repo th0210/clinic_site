@@ -1,0 +1,60 @@
+@use "../global" as global;
+
+.p-cta {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255, 0.85);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: global.$cta;
+
+    @include global.mq(tb) {
+        display: flex;
+    }
+
+    @include global.mq(sp) {
+        display: flex;
+    }
+}
+
+.p-cta__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-cta__texts {
+    text-align: center;
+}
+
+.p-cta__tel {
+    font-size: 20px;
+    color: global.$main-color;
+    font-weight: global.$bold;
+    line-height: 1.15;
+    padding-left: 22px;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        background: url(../img/icon_tel.svg) no-repeat center / contain;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        
+    }
+}
+
+.p-cta__hours {
+    font-size: 10px;
+    font-weight: global.$medium;
+    line-height: 1.2;
+}

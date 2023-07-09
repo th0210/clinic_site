@@ -1,0 +1,191 @@
+@use "../global" as global;
+
+.p-footer-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: global.$text-color2;
+    border-radius: 20px;
+    display: flex;
+    gap: 40px;
+    padding: 40px 49px;
+
+    @include global.mq(tb2) {
+        padding: 40px 0;
+        max-width: 620px;
+        display: block;
+    }
+
+    @include global.mq(sp) {
+        padding: 32px 10 20px 10pxpx;
+    }
+}
+
+.p-footer-info__content {
+    @include global.mq(tb) {
+        width: 50%;
+    }
+
+    @include global.mq(tb2) {
+        width: 100%;
+    }
+}
+
+.p-footer-info__logo {
+    max-width: 404px;
+    height: 41px;
+    margin: 0 auto; 
+
+    @include global.mq(sp) {
+        max-width: 310px;
+        height:  auto;
+    }
+
+    img {
+        height: 100%;
+        display: block;
+    }
+}
+
+.p-footer-info__address {
+    font-size: 14px;
+    font-weight: global.$medium;
+    margin-top: 8px;
+    text-align: center;
+
+    span {
+        margin-left: 14px;
+    }
+}
+
+.p-footer-info__tel {
+    font-size: 32px;
+    color: global.$main-color;
+    font-weight: global.$bold;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.p-footer-info__hours {
+    font-size: 12px;
+    color: global.$main-color;
+    font-weight: global.$medium;
+    line-height: 1;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.p-footer-info__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    @include global.mq(tb2) {
+        justify-content: center;
+    }
+
+    @include global.mq(sp) {
+        padding: 0 10px;
+    }
+}
+
+.p-footer-info__button {
+    width: 100%;
+    text-align: center;
+
+    @include global.mq(tb2) {
+        width: 220px;
+        max-width: 220px;
+    }
+
+    &:hover {
+        .c-button-blue {
+            background: global.$sub-color1;
+        }
+
+        .c-button-white {
+            color: global.$text-color2;
+            background: global.$main-color;
+        }
+    }
+}
+
+.p-footer-info__button__text {
+    position: relative;
+
+    &.white {
+        padding-left: 30px;
+
+        @include global.mq(sp) {
+            padding-left: 25px;
+        }
+        
+        &::after {
+            content: "";
+            background: global.$text-color2 url(../img/icon-07-2.svg) no-repeat center / 121%;
+            width: 20px;
+            height: 16px;
+            border-radius: 4px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            @include global.mq(sp) {
+                width: 15px;
+                height: 12px;
+            }
+        }
+    }
+}
+
+.p-footer-info__table {
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    @include global.mq(tb2) {
+        margin: 20px auto 0 auto;
+        max-width: 460px;
+    }
+
+    @include global.mq(sp) {
+        width: 100%;
+    }
+}
+
+.p-footer-info__map {
+    width: 100%;
+    position: relative;
+
+    @include global.mq(tb) {
+        width: 50%;
+    }
+
+    @include global.mq(tb2) {
+        max-width: 460px;
+        width: 460px;
+        height: 350px;
+        margin: 60px auto 0 auto;
+    }
+
+    @include global.mq(sp) {
+        width: calc(100% - 20px);
+        margin-top: 20px;
+        
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include global.mq(sp) {
+            
+        }
+    }
+}

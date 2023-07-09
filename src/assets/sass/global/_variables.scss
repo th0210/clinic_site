@@ -1,0 +1,48 @@
+/*------- 色 -------*/
+/*テキスト*/
+$text-color1: #393939; 
+$text-color2: #fff; 
+
+/*ベース*/
+$main-color: #1391E6;
+$sub-color1: #0060A0;
+$sub-color2: #DFF1FD;
+$accent-color: #EE5A6D;
+$bg-color: #DFF1FD;
+
+/*リンク*/
+$link-color: #888;
+
+/*影*/
+$shadow: #00000029;
+
+/*------- フォント -------*/
+$ff-main: 'M PLUS Rounded 1c', sans-serif;
+
+/*------- 文字の太さ -------*/
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+
+/*------- インナー -------*/
+$inner-width: 1280px;
+$sp-width: 600px;
+
+/*------- ブレークポイント -------*/
+$breakpoints: (
+    "sp": "screen and (max-width: #{$sp-width - 1px})",
+    "tb2": "screen and (max-width: 899px)",
+    "tb": "screen and (max-width: #{$inner-width - 1px})",
+    "pc": "screen and (min-width: #{$inner-width})"
+);
+
+/*------- 重なり(z-index) -------*/
+$header: 40;
+$cta: 30;
+$to-top: 25;
+$drawer: 20;
+$swiper-item: 10;
+$img: 5;
+
+

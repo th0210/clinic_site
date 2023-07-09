@@ -1,0 +1,41 @@
+@use "../global" as global;
+
+.p-reserve-cta {
+    border-radius: 20px 0 0 20px;
+    position: fixed;
+    top: 176px;
+    right: 0;
+    z-index: global.$header;
+
+    &:hover {
+        .p-reserve-cta__link {
+            background: global.$sub-color1;
+        }
+    }
+
+    @include global.mq(tb) {
+        display: none;
+    }
+
+    @include global.mq(sp) {
+        display: none;
+    }
+}
+
+.p-reserve-cta__link {
+    @include global.reserve(92px, 120px, 20px, 0, 0, 20px, 21px, 17px);
+}
+
+.p-reserve-cta__img {
+    width: 49px;
+    height: 29px;
+    margin: 0 auto;
+    
+}
+
+.p-reserve-cta__text {
+    font-size: 14px;
+    font-weight: global.$bold;
+    color: global.$text-color2;
+    margin-top: 12px;
+}

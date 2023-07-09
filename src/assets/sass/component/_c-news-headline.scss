@@ -1,0 +1,12 @@
+@use "../global" as global;
+
+.c-news-headline {
+    font-size: 12px;
+    color: global.$main-color;
+    font-weight: global.$bold;
+    letter-spacing: 0.1em;
+
+    @include global.mq(sp) {
+        font-size: 11px;
+    }
+}

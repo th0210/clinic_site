@@ -1,0 +1,48 @@
+@use "../global" as global;
+
+.p-state {
+    margin: 160px 0 2.5vw 0;
+    padding-bottom: 160px;
+
+    @include global.mq(sp) {
+        margin-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.p-state__inner {
+    max-width: 1000px;
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+}
+
+.p-state__title {
+    position: relative;
+    display: inline-block;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}
+
+.p-state__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+
+    @include global.mq(sp) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+        margin-top: 40px;
+       
+    }
+}
+
+.p-state__img {
+
+}
+

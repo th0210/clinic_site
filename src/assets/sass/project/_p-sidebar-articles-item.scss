@@ -1,0 +1,117 @@
+@use "../global" as global;
+
+.p-sidebar-articles-item {
+    margin-top: 20px;
+
+    &:hover {
+        .p-sidebar-articles-item__title {
+            color: global.$main-color;
+        }
+
+        .p-sidebar-articles-item__img img {
+            transform: scale(1.2, 1.2);
+        }
+    }
+}
+
+.p-sidebar-articles-item__link {
+    display: flex;
+    gap: 10px;
+
+    @include global.mq(sp) {
+        gap: 0;
+    }
+}
+
+.p-sidebar-articles-item__img {
+    overflow: hidden;
+
+    @include global.mq(tb2) {
+        height: 153px;
+    }
+
+    @include global.mq(sp) {
+        width: 133px;
+        height: 108px;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.4s ease-out;
+
+        @include global.mq(sp) {
+            width: 100%;
+        }
+    }
+}
+
+.p-sidebar-articles-item__content {
+    @include global.mq(tb2) {
+        padding-top: 20px;
+    }
+
+    @include global.mq(sp) {
+        width: calc(100% - 134px);
+        padding-top: 2px;
+        margin-left: 10px;
+    }
+}
+
+.p-sidebar-articles-item__category {
+    @include global.category(10px, 2px, 8px, 14px);
+
+    @include global.mq(tb2) {
+        @include global.category(11px, 6px, 12px, 14px);
+    }
+
+    @include global.mq(sp) {
+        @include global.category(10px, 2px, 8px, 14px);
+    }
+}
+
+.p-sidebar-articles-item__title {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: global.$medium;
+    transition: 0.3s ease;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+ 
+    /*IE対策*/
+    line-height: 1.5em;
+    max-height: 4.5em;
+
+    @include global.mq(tb2) {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 13px;
+    }
+
+    @include global.mq(sp) {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 13px;
+    }
+}
+
+.p-sidebar-articles-item__time {
+    font-size: 11px;
+    color: global.$link-color;
+    font-weight: global.$medium;
+
+    @include global.mq(tb2) {
+        font-size: 12px;
+        margin-top: 16px;
+    }
+
+    @include global.mq(sp) {
+        font-size: 11px;
+        line-height: 1.5;
+        margin-top: 16px;
+    }
+}

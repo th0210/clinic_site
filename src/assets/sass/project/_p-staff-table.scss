@@ -1,0 +1,32 @@
+@use "../global" as global;
+
+.p-staff-table {
+
+}
+
+.p-staff-table__item {
+  font-size: 14px;
+  font-weight: global.$medium;
+  display: flex;
+
+  dt {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 18px 10px 18px 20px;
+    background-color: global.$bg-color;
+    border-bottom: 1px solid global.$text-color2;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  dd {
+    width: 50%;
+    padding: 18px 10px 18px 20px;
+    padding-left: 20px;
+    background-color: global.$text-color2;
+  }
+}
+

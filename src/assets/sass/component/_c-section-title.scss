@@ -1,0 +1,12 @@
+@use "../global" as global;
+
+.c-section-title {
+    font-size: 28px;
+    color: global.$text-color1;
+    font-weight: global.$bold;
+    letter-spacing: 0.08em;
+
+    @include global.mq(sp) {
+        font-size: 20px;
+    }
+}

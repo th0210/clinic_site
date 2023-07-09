@@ -1,0 +1,68 @@
+@use "../global" as global;
+
+.p-mv {
+    margin: 120px 60px 0 60px;
+    border-radius: 22px;
+    position: relative;
+
+    @include global.mq(tb) {
+        height: 335px;
+        margin: 120px 40px 0 40px;
+    }
+
+    @include global.mq(sp) {
+        height: 188px;
+        margin: 80px 24px 0 24px;
+    }
+
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0, 0.2);
+        border-radius: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    img {
+        @include global.mq(tb) {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+}
+
+.p-mv__texts {
+    color: global.$text-color2;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    font-weight: global.$bold;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.p-mv__title {
+    font-size: 32px;
+
+    @include global.mq(sp) {
+        font-size: 24px;
+    }
+}
+
+.p-mv__subtitle {
+    font-size: 14px;
+    margin-top: 20px;
+
+    @include global.mq(sp) {
+        font-size: 12px;
+        margin-top: 16px;
+    }
+}

@@ -1,0 +1,79 @@
+@use "../global" as global;
+
+.p-footer-nav {
+    margin-top: 44px;
+
+    @include global.mq(tb2) {
+        max-width: 620px;
+        margin: 44px auto 0 auto;
+    }
+
+    @include global.mq(sp) {
+        margin: 60px auto 0 auto;
+        padding-left: 10px;
+    }
+}
+
+.p-footer-nav__lists {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    @include global.mq(tb2) {
+        display: block;
+    }
+}
+
+.p-footer-nav__row1__lists {
+    display: flex;
+    gap: 40px;
+
+    @include global.mq(tb2) {
+        justify-content: flex-start;
+    }
+
+    @include global.mq(sp) {
+        display: block;
+    }
+}
+
+.p-footer-nav__row2__lists {
+    display: flex;
+    gap: 40px;
+
+    @include global.mq(tb2) {
+        margin-top: 60px;
+        justify-content: flex-start;
+    }
+
+    @include global.mq(sp) {
+        margin-top: 40px;
+        display: block;
+    }
+}
+
+.p-footer-nav__row1__lists {
+
+}
+
+.p-footer-nav__row2__lists {
+
+}
+.p-footer-nav__list {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: global.$bold;
+
+    @include global.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.p-footer-nav__link {
+    transition: 0.3s ease;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+    
+}

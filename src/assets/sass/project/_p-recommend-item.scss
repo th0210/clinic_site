@@ -1,0 +1,28 @@
+@use "../global" as global;
+
+.p-recommend-item {
+    @include global.mq(sp) {
+        margin-top: 60px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.p-recommend-item__headline {
+    max-width: 177px;
+    height: 32px;
+    margin:  0 auto;
+}
+
+.p-recommend-item__img {
+    margin-top: 15px;
+}
+
+.p-recommend-item__text {
+    font-size: 14px;
+    font-weight: global.$medium;
+    line-height: 1.7;
+    margin-top: 24px;
+}

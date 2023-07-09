@@ -1,0 +1,70 @@
+@use "../global" as global;
+
+.p-hamburger-menu {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    display: none;
+
+    @include global.mq(tb) {
+        display: block;
+    }
+
+    @include global.mq(sp) {
+        display: block;
+    }
+}
+
+.p-hamburger-menu__bar1 {
+    width: 27px;
+    height: 2px;
+    background: global.$main-color;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s ease;
+
+    &.is-open {
+        background: global.$text-color2;
+        top: 15px;
+        transform: translateX(-50%) rotate(-45deg);
+    }
+}
+
+.p-hamburger-menu__bar2 {
+    width: 27px;
+    height: 2px;
+    background: global.$main-color;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+
+    &.is-open {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.p-hamburger-menu__bar3 {
+    width: 27px;
+    height: 2px;
+    background: global.$main-color;
+    display: inline-block;
+    bottom: 8px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: 0.3s ease;
+
+    &.is-open {
+        background: global.$text-color2;
+        bottom: 15px;
+        transform: translateX(-50%) rotate(45deg);
+    }
+}

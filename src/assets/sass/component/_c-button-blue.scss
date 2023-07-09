@@ -1,0 +1,27 @@
+@use "../global" as global;
+
+.c-button-blue {
+    width: 100%;
+    max-width: 220px;
+    font-size: 16px;
+    color: global.$text-color2;
+    font-weight: global.$medium;
+    background: global.$main-color;
+    padding: 17px 0 17px 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+
+    @include global.mq(sp) {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    img {
+        width: 24px;
+        height: 15px;
+        margin-right: 8px;
+    }
+}

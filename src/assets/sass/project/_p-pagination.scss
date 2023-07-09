@@ -1,0 +1,93 @@
+@use "../global" as global;
+
+.p-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 100px;
+
+    @include global.mq(sp) {
+        margin-top: 60px;
+    }
+}
+
+.page-numbers.prev,
+.page-numbers,
+.page-numbers.next {
+    font-size: 14px;
+    font-weight: global.$medium;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease;
+
+    @include global.mq(sp) {
+        font-size: 11px;
+    }
+}
+
+.page-numbers.prev {
+    color: global.$text-color2;
+    background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 15px / 16px;
+    padding: 8px 15px 7px 39px;
+
+    @include global.mq(sp) {
+        background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 13px / 14px;
+        padding: 7px 15px 6px 34px;
+    }
+
+    &:hover {
+        font-weight: global.$medium;
+        background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 10px / 16px;
+
+        @include global.mq(sp) {
+            background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 8px / 14px;
+            padding: 7px 15px 6px 34px;
+        }
+    }
+}
+
+.page-numbers {
+    color: global.$main-color;
+    background: global.$text-color2;
+    padding: 8px 13px;
+    border: 1px solid global.$main-color;
+
+    @include global.mq(sp) {
+        padding: 7px 11px;
+    }
+
+    &:hover {
+        color: global.$text-color2;
+        font-weight: global.$bold;
+        background: global.$main-color;
+    }
+
+    &.current {
+        color: global.$text-color2;
+        font-weight: global.$bold;
+        background: global.$main-color;
+    }
+}
+
+.page-numbers.next {
+    color: global.$text-color2;
+    background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 15px / 16px;
+    padding: 8px 39px 7px 15px;
+
+    @include global.mq(sp) {
+        background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 13px / 14px;
+        padding: 7px 34px 6px 15px;
+    }
+
+    &:hover {
+        font-weight: global.$medium;
+        background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 10px / 16px;
+
+        @include global.mq(sp) {
+            background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 8px / 14px;
+        }
+    }
+} 
+

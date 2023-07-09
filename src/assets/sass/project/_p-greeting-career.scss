@@ -1,0 +1,36 @@
+@use "../global" as global; 
+
+.p-greeting-career {
+    margin-top: 60px;
+
+    @include global.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.p-greeting-career__title {
+    font-size: 16px;
+    font-weight: global.$medium;
+    padding-bottom: 8px;
+    border-bottom: 1px solid global.$text-color1;
+}
+
+.p-greeting-career__content {
+
+}
+
+.p-greeting-career__item {
+    display: flex;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight:  global.$medium;
+    margin-top: 10px;
+}
+
+.p-greeting-career__month {
+    margin-right: 16px;
+}
+
+.p-greeting-career__text {
+
+}

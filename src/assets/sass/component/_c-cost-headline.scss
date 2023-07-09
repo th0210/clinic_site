@@ -1,0 +1,14 @@
+@use "../global" as global;
+
+.c-cost-headline {
+    font-size: 14px;
+    color: global.$text-color2;
+    background: global.$accent-color;
+    font-weight: global.$bold;
+    letter-spacing: 0.08em;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 12px;
+    border-radius: 24px;
+    display: inline-block;
+}

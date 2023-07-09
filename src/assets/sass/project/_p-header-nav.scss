@@ -1,0 +1,97 @@
+@use "../global" as global;
+
+.p-header-nav {
+    height: 80px;
+    margin: 0 32px 0 0;
+}
+
+.p-header-nav__lists {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 24px;
+}
+
+.p-header-nav__list {
+    font-size: 11px;
+    font-weight: global.$bold;
+    padding-bottom: 6px;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: global.$main-color;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        transition: 0.3s ease;
+        display: none;
+    }
+
+    &::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background: global.$main-color;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform-origin: center top;
+        transform: translateX(-50%) scale(0.1);
+        transition: 0.3s ease;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .p-header-nav__link {
+            color: global.$main-color;
+        }
+
+        #l-header__icon-01,
+        #l-header__icon-02,
+        #l-header__icon-03,
+        #l-header__icon-04,
+        #l-header__icon-05,
+        #l-header__icon-07 {
+            fill: global.$main-color;
+
+            path {
+                fill: global.$main-color;
+            }
+        }
+    }
+
+    &.is-active {
+        &::before {
+            display: block; /*is-activeがついてる時のbefore*/
+        }
+
+        &:hover {
+            &::after {
+                transform: scale(0, 0); /*is-activeがついてる時にホバーした時のafter*/
+            }
+        }
+    }
+}
+
+.p-header-nav__link {
+    transition: 0.3s ease;
+
+    &.is-active {
+        color: global.$main-color;
+        fill: global.$main-color;
+
+        path {
+            color: global.$main-color;
+            fill: global.$main-color;
+        }
+    }
+
+}

@@ -1,0 +1,27 @@
+@use "../global" as global;
+
+body {
+    font-family: global.$ff-main;
+    color: global.$text-color1;
+    line-height: 1.6;
+
+    &.no-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: global.$text-color1;
+}
+
+li {
+    list-style: none;
+}

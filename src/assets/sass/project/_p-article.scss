@@ -1,0 +1,259 @@
+@use "../global" as global;
+
+.p-article {
+    max-width: 1000px;
+    margin: 80px auto calc(160px + 2.5vw) auto;
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+
+    @include global.mq(sp) {
+        margin-top: 60px;
+        padding: 0 20px;
+    }
+}
+
+.p-article__wrapper {
+    display: flex;
+    gap: 30px;
+
+    @include global.mq(tb2) {
+        display: block;
+    }
+}
+
+.p-article__main {
+    width: calc(100% - 330px);
+
+    @include global.mq(tb) {
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: global.$bold;
+        letter-spacing: 0.08em;
+    }
+
+    h2,
+    h3,
+    h4 {
+        color: global.$main-color;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.4;
+
+        @include global.mq(sp) {
+            font-size: 20px;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 52px;
+        padding-left: 28px;
+        margin-top: 60px;
+        position: relative;
+
+        @include global.mq(sp) {
+            font-size: 18px;
+            padding-left: 22px;
+        }
+
+        &::before {
+            content: "";
+            width: 8px;
+            height: 52px;
+            background: global.$main-color;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            @include global.mq(sp) {
+                width: 6px;
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-top: 40px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid global.$main-color;
+
+        @include global.mq(sp) {
+            font-size: 16px;
+        }
+
+        & + p {
+            margin-top: 16px;
+
+            @include global.mq(sp) {
+                margin-top: 18px;
+            }
+        }
+    }
+
+    h4 {
+        font-size: 16px;
+        margin-top: 60px;
+
+        @include global.mq(tb) {
+            font-size: 14px;
+        }
+
+        & + p {
+            margin-top: 16px;
+        }
+    }
+
+    time {
+        font-size: 16px;
+        color: global.$main-color;
+        font-weight: global.$medium;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.7;
+        font-weight: global.$medium;
+        margin-top: 60px;
+
+        & + p {
+            margin-top: 24px;
+        }
+    }
+
+    a {
+        font-size: 14px;
+        color: global.$main-color;
+        line-height: 1.7;
+        font-weight: global.$medium;
+        text-decoration: underline;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+
+    ul {
+        margin-top: 20px;
+    }
+
+    li {
+        font-size: 16px;
+        font-weight: global.$medium;
+        list-style-type: disc;
+        margin: 12px 0 0 20px+14px;
+    }
+}
+
+.p-article__published {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.p-article__pagination {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    position: relative;
+
+    @include global.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.p-article__pagination__prev,
+.p-article__pagination__next {
+    a {
+        font-size: 14px;
+        color: global.$text-color2;
+        line-height: 1;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: 0.3s ease;
+        display: inline-block;
+        white-space: nowrap;
+    }
+}
+
+.p-article__pagination__prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(50% + 66px);
+
+    @include global.mq(sp) {
+        right: calc(50% + 55px);
+    }
+
+    a {
+        background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 16px / 16px;
+        padding: 9px 16px 9px 38px;
+
+        @include global.mq(sp) {
+            background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 14px / 16px;
+            padding: 10px 16px 10px 36px;
+        }
+
+        &:hover {
+            background: global.$main-color url(../img/arrow-circle-left.svg) no-repeat center left 10px / 16px ;
+        }
+    }
+}
+
+.p-article__pagination__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% + 66px);
+
+    @include global.mq(sp) {
+        left: calc(50% + 55px);
+    }
+
+    a {
+        background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 16px / 16px;
+        padding: 9px 38px 9px 16px;
+
+        @include global.mq(sp) {
+            background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 14px / 16px;
+            padding: 10px 36px 10px 16px;
+        }
+
+        &:hover {
+            background: global.$main-color url(../img/arrow-circle-right.svg) no-repeat center right 10px / 16px ;
+        }
+    }
+}
+
+.p-article__pagination__all {
+    a {
+        font-size: 14px;
+        color: global.$main-color;
+        background: global.$text-color2;
+        line-height: 1;
+        border-radius: 4px;
+        text-decoration: none;
+        border: 1px solid global.$main-color;
+        padding: 11px 17px;
+        display: inline-block;
+
+        @include global.mq(sp) {
+            padding: 11px 16px;
+        }
+    }
+}

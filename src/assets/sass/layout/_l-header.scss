@@ -1,0 +1,111 @@
+@use "../global" as global;
+
+.l-header {
+    width: 100%;
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(255, 255, 255, 0.85);
+    box-shadow: 0px 3px 6px #00000029;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: global.$header;
+
+    &.none {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    @include global.mq(sp) {
+        height: 60px;
+        padding: 0 20px;
+    }
+}
+
+.l-header__logo {
+    transition: 0.3s ease;
+    
+    &.none {
+        display: none;
+    }
+}
+
+.l-header__logo__link {
+    width: 270px;
+    display: block;
+    position: relative;
+
+    @include global.mq(tb) {
+        width: 270px;
+    }
+
+    @include global.mq(sp) {
+        width: 270px;
+    }
+}
+
+.l-header__logo__drawer {
+    display: none;
+
+    &.is-open {
+        display: block;
+    }
+}
+
+.l-header__right {
+    display: flex;
+    align-items: center;
+
+    @include global.mq(tb) {
+        display: none;
+    }
+
+    @include global.mq(sp) {
+        display: none;
+    }
+}
+
+#l-header__icon-01,
+#l-header__icon-02,
+#l-header__icon-03,
+#l-header__icon-04,
+#l-header__icon-05,
+#l-header__icon-07 {
+    margin: 0 auto 6px auto;
+    display: block;
+    transition: 0.3s ease;
+
+    &:hover {
+        fill: global.$main-color;
+        
+        path {
+            fill: global.$main-color;
+        }
+    }
+}
+
+.l-header__address {
+    font-size: 12px;
+    font-weight: global.$medium;
+    line-height: 1;
+    text-align: right;
+}
+
+.l-header__tel {
+    font-size: 32px;
+    color: global.$main-color;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: global.$bold;
+    margin-top: 6px;
+
+    img {
+        width: 28px;
+        height: 28px;
+        display: inline-block;
+        margin-right: 4px;
+    }
+}

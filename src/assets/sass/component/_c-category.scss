@@ -1,0 +1,9 @@
+@use "../global" as global;
+
+.c-category {
+    @include global.category(11px, 6px, 12px, 14px);
+
+    @include global.mq(sp) {
+        @include global.category(10px, 2px, 8px, 14px);
+    }
+}

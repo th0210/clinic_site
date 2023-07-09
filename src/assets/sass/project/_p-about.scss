@@ -1,0 +1,23 @@
+@use "../global" as global;
+
+.p-about {
+    margin-top: 80px;
+
+    @include global.mq(sp) {
+        margin-top: 60px;
+    }
+}
+
+.p-about__inner {
+    margin: 0 auto;
+}
+
+.p-about__title {
+    display: inline-block;
+    position: relative;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}

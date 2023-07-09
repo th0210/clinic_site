@@ -1,0 +1,50 @@
+@use "../global" as global;
+
+.c-medical-button {
+    font-size: 24px;
+    color: global.$main-color;
+    font-weight: global.$bold;
+    background: global.$text-color2;
+    letter-spacing: 0.08em;
+    padding: 19px 32px;
+    line-height: 1;
+    border: 2px solid global.$main-color;
+    border-radius: 12px;
+    display: inline-block;
+    white-space: nowrap;
+    transition: 0.3s ease;
+    position: relative;
+
+    @include global.mq(sp) {
+        width: 100%;
+        padding: 17px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover {
+        padding: 11px 32px 27px 32px;
+        background: global.$bg-color;
+
+        &::before {
+            bottom: 5px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../img/arrow-bottom.svg) no-repeat center / contain;
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+}

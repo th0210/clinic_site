@@ -1,0 +1,350 @@
+@use "../global" as global;
+
+.p-form {
+    margin-top: 60px;
+
+    @include global.mq(sp) {
+        margin-top: 68px;
+    }
+}
+
+.p-form__content {
+
+}
+
+.p-form__row {
+    display: flex;
+    align-items: center;
+    padding: 28px 0;
+    border-bottom: 1px solid #c2c2c2;
+
+    @include global.mq(sp) {
+        display: block;
+        padding: 25px 0;
+    }
+
+    &:first-child {
+        border-top: 1px solid #c2c2c2;
+    }
+}
+
+.p-form__title {
+    width: 240px;
+
+    @include global.mq(sp) {
+        width: 100%;
+    }
+    
+    p {
+        font-size: 16px;
+        font-weight: global.$medium;
+        display: inline-block;
+        position: relative;
+
+        &::before {
+            content: "\5FC5\9808";
+            font-size: 12px;
+            color: global.$text-color2;
+            font-weight: global.$bold;
+            background: global.$accent-color;
+            padding: 3px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+            position: absolute;
+            top: 50%;
+            left: calc(100% + 16px);
+            transform: translateY(-50%);
+        }
+
+        &.content {
+            &::before {
+                left: calc(100% + 26px);
+            }
+        }
+
+        &.no-required {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.p-form__input {
+    width: calc(100% - 240px);
+
+    @include global.mq(sp) {
+        width: 100%;
+    }
+
+    &.radio {
+        margin-left: -32px;
+
+        @include global.mq(sp) {
+            margin-left: -40px;
+        }
+
+        .wpcf7-list-item {
+            margin-left: 32px;
+
+            @include global.mq(sp) {
+                margin-left: 40px;
+            }
+        }
+    }
+
+    &.checkbox {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 32px;
+        row-gap: 16px;
+        margin-top: -16px;
+        margin-left: -32px;
+
+        @include global.mq(sp) {
+            margin-top: 4px;
+            column-gap: 24px;
+            margin-left: -24px;
+        }
+        
+        .wpcf7-list-item {
+            margin-top: 16px;
+            margin-left: 32px;
+
+            @include global.mq(sp) {
+                margin-left: 24px;
+            }
+        }
+    }
+
+    &.date {
+        span {
+            display: block;
+            margin-top: 20px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+input[type="date"] ,
+textarea {
+    width: 100%;
+    font-size: 16px;
+    background: #f6f6f6;
+    border-radius: 4px;
+    padding: 13px 16px;
+
+    @include global.mq(sp) {
+        margin-top: 13px;
+    }
+
+    &::placeholder {
+        color: #c2c2c2;
+    }
+}
+
+input[type="radio"] {
+    display: none;
+
+    &:checked {
+        & + span {
+            &::after {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    & + span {
+        font-size: 14px;
+        font-weight: global.$medium;
+        display: inline-block;
+        padding-left: 32px;
+        cursor: pointer;
+        position: relative;
+
+        @include global.mq(sp) {
+            margin-top: 20px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            width: 24px;
+            height: 24px;
+            border: 1px solid global.$main-color;
+            left: 0; 
+        }
+
+        &::after {
+            width: 12px;
+            height: 12px;
+            background: global.$main-color;
+            left: 6px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.1s ease;
+        }
+    }
+}
+
+/*.wpcf7-list-item {
+    margin-left: 32px;
+
+    &.first {
+        margin-left: 0;
+    }
+}*/
+
+.p-form__radio__label {
+    &:first-child {
+        margin-right: 32px;
+    }
+}
+
+.p-form__text {
+    display: block;
+    font-size: 11px;
+    line-height: 1;
+    color: global.$link-color;
+    margin-top: 3px;
+}
+
+input[type="checkbox"] {
+    display: none;
+
+    &:checked {
+        & + span {
+            &::after {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    & + span {
+        font-size: 14px;
+        font-weight: global.$medium;
+        display: inline-block;
+        padding-left: 32px;
+        cursor: pointer;
+        position: relative;
+
+        @include global.mq(sp) {
+            /*margin-top: 20px;*/
+        }
+
+        &::before {
+            content: "";
+            width: 24px;
+            height: 24px;
+            border: 1px solid global.$main-color;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            content: "";
+            width: 22px;
+            height: 12px;
+            border-left: 4px solid global.$main-color;
+            border-bottom: 4px solid global.$main-color;
+            position: absolute;
+            bottom: 9px;
+            left: 1px;
+            transform: rotate(-45deg);
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.1s ease;
+        }
+    }
+}
+
+select {
+    font-size: 14px;
+    font-weight: global.$medium;
+    background: #f6f6f6 url(../img/select-arrow.svg) no-repeat center right 12px / 20px;
+    cursor: pointer;
+}
+
+input[type="date"] {
+    color: #c2c2c2;
+    background: #f6f6f6 url(../img/icon-calendar.svg) no-repeat center right 12px / 20px;
+    position: relative;
+
+    @include global.mq(sp) {
+        display: block;
+    }
+
+    /*カレンダーアイコンを引き延ばして透明に*/
+    &::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+textarea {
+    height: 200px;
+
+    @include global.mq(sp) {
+        width: 100%;
+    }
+}
+
+.p-form__button {
+    text-align: center;
+    margin-top: 72px;
+
+    @include global.mq(sp) {
+        margin-top: 68px;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+input[type="submit"] {
+    width: 100%;
+    max-width: 360px;
+    font-size: 16px;
+    font-weight: global.$medium;
+    color: global.$main-color;
+    letter-spacing: 20px;
+    text-indent: 20px;
+    padding: 17px;
+    border: 1px solid global.$main-color;
+    border-radius: 28px;
+    transition: 0.3s ease;
+
+    @include global.mq(sp) {
+        max-width: 273px;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 24px;
+    }
+
+    &:hover {
+        color: global.$text-color2;
+        background: global.$main-color;
+    }
+}

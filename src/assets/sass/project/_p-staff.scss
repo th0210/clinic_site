@@ -1,0 +1,82 @@
+@use "../global" as global;
+
+.p-staff {
+    margin: 170px 0 calc(2.5vw + 160px) 0;
+
+    @include global.mq(sp) {
+        margin: 100px 0 calc(2.5vw + 100px) 0;
+    }
+}
+
+.p-staff__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+}
+
+.p-staff__title {
+    display: inline-block;
+    position: relative;
+    @include global.section-title-deco(67px, 20px, -92px, -92px);
+
+    @include global.mq(sp) {
+        @include global.section-title-deco(56px, 13px, -72px, -72px);
+    }
+}
+
+.p-staff__row {
+    margin-top: 60px;
+
+    @include global.mq(tb) {
+        margin-top: 40px;
+    }
+}
+
+
+.p-staff__job {
+    font-size: 16px;
+    font-weight: global.$bold;
+    letter-spacing: 0.08em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid global.$text-color1;
+}
+
+.p-staff__wrapper1 {
+    display: flex;
+    column-gap: 80px;
+    row-gap: 60px;
+    margin-top: 40px;
+
+    @include global.mq(tb2) {
+        column-gap: 20px;
+        row-gap: 40px;
+    }
+
+    @include global.mq(sp) {
+        margin-top: 37px;
+        display: block;
+    }
+}
+
+.p-staff__wrapper2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 80px;
+    row-gap: 60px;
+    margin-top: 40px;
+
+    @include global.mq(tb2) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 40px;
+    }
+
+    @include global.mq(sp) {
+        margin-top: 37px;
+        display: block;
+    }
+}
+

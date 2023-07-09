@@ -1,0 +1,56 @@
+@use "../global" as global;
+
+.p-medical-type {
+    margin: 80px auto 0 auto; 
+
+    @include global.mq(tb) {
+        padding: 0 24px;
+    }
+}
+
+.p-medical-type__inner {
+    margin: 0 auto;
+    max-width: 998px;
+}
+
+.p-medical-type__wrapper {
+    margin: 0 auto;
+
+    &:last-child {
+        margin-top: 80px;
+    }
+}
+
+.p-medical-type__head {
+    display: flex;
+    align-items: center;
+}
+
+.p-medical-type__title {
+    margin-right: 24px;
+}
+
+.p-medical-type__lists {
+    display: flex;
+    gap: 16px;
+    margin: 32px auto 0 auto;
+
+    @include global.mq(tb) {
+        flex-wrap: wrap;
+    }
+
+    @include global.mq(sp) {
+        display: block;
+    }
+}
+
+.p-medical-type__item {
+    @include global.mq(sp) {
+        margin-top: 16px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
